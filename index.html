@@ -1,157 +1,268 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purva Chiniya - Portfolio</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        header {
-            text-align: center;
-            padding: 50px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        h1 { margin-bottom: 10px; font-size: 2.5rem; }
-        .subtitle { color: #666; font-size: 1.2rem; }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #0366d6;
-            font-weight: bold;
-        }
-        section { margin: 40px 0; }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .card h3 { margin-top: 0; }
-        .date { color: #888; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-        .tags { margin-top: 10px; }
-        .tag {
-            background: #e1e4e8;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-        footer {
-            text-align: center;
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Purva Chiniya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #222;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { font-weight: 700; color: #111; }
+    
+    /* Header / Bio Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    
+    .bio-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 40px;
+    }
+    
+    .bio-text h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    .bio-text p { margin-bottom: 15px; }
+    
+    .social-links { margin-top: 20px; }
+    .social-links a { margin-right: 15px; font-weight: 400; }
+
+    /* Profile Photo */
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      background-color: #eee; /* Placeholder color */
+    }
+
+    /* Section Headings */
+    h2 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.5em;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-top: 50px;
+      margin-bottom: 25px;
+      color: #111;
+    }
+
+    /* Publications List */
+    .pub-item {
+      margin-bottom: 25px;
+    }
+    .pub-title {
+      font-weight: 700;
+      color: #111;
+      display: block;
+    }
+    .pub-authors { font-size: 0.95em; color: #444; }
+    .pub-venue { font-style: italic; color: #666; font-size: 0.95em; }
+    .pub-links { font-size: 0.9em; margin-top: 3px; }
+    .highlight { font-weight: 700; text-decoration: underline; }
+
+    /* Experience & Education Lists */
+    .exp-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .exp-role { font-weight: 700; }
+    .exp-org { color: #444; }
+    .exp-date { color: #888; text-align: right; min-width: 120px; }
+    .exp-desc { 
+        font-size: 0.9em; 
+        color: #555; 
+        margin-top: 5px;
+        margin-left: 20px; /* Indent description */
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .bio-text { padding-right: 0; }
+      .profile-photo { margin-bottom: 20px; }
+      .exp-item { flex-direction: column; }
+      .exp-date { text-align: left; margin-bottom: 5px; font-size: 0.85em; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Purva Chiniya</h1>
-        <p class="subtitle">Applied Scientist @ Amazon | LLM Security & Systems</p>
-        <div class="social-links">
-            <a href="mailto:purvachiniya15@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/[your-linkedin-id]">LinkedIn</a>
-            <a href="https://scholar.google.com/[your-id]">Google Scholar</a>
+  <header>
+    <div class="bio-text">
+      <h1>Purva Chiniya</h1>
+      <p>
+        I am an <strong>Applied Scientist at Amazon</strong> based in Bellevue, WA. [cite_start]My research focuses on LLM security, defending against prompt-injection attacks, and large-scale inference optimization[cite: 17, 18, 21].
+      </p>
+      <p>
+        [cite_start]I completed my <strong>Master of Science in Computer Science</strong> at the <strong>University of Maryland, College Park</strong>[cite: 6, 7], where I studied Systems for ML and LLM Security. [cite_start]Previously, I obtained my Bachelor's from <strong>IIT Roorkee</strong>[cite: 9, 10].
+      </p>
+      <p>
+        [cite_start]My recent work includes designing the Security Observer Model V5 for Alexa and developing gradient-based defenses against jailbreak attacks[cite: 21, 34].
+      </p>
+      
+      <div class="social-links">
+        <a href="mailto:purvachiniya15@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/YOUR_ID">LinkedIn</a>
+        <a href="https://scholar.google.com/YOUR_ID">Google Scholar</a>
+        <a href="https://github.com/YOUR_ID">GitHub</a>
+      </div>
+    </div>
+    
+    <img src="https://via.placeholder.com/200" alt="Purva Chiniya" class="profile-photo">
+  </header>
+
+  <section>
+    <h2>News & Updates</h2>
+    <ul>
+      [cite_start]<li><strong>June 2025:</strong> Started as an Applied Scientist at Amazon[cite: 20].</li>
+      [cite_start]<li><strong>Dec 2024:</strong> Joined Sentient Foundation as an AI Research Intern[cite: 26].</li>
+      [cite_start]<li><strong>May 2024:</strong> Started Applied Scientist Internship at Amazon[cite: 33].</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected Publications</h2>
+
+    <div class="pub-item">
+      <span class="pub-title">SecRepoBench: Benchmarking LLMs for Secure Code Generation</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, et al.</div>
+      <div class="pub-venue">Preprint / In Submission</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a> <a href="#">[Code]</a>
+      </div>
+      <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
+        [cite_start]Benchmarked 19 LLMs on 318 tasks across 27 C/C++ repos, revealing severe security gaps with secure-pass@1 dropping to 28%[cite: 37, 38].
+      </p>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">Open Deep Search</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, et al.</div>
+      <div class="pub-venue">Technical Report</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a> <a href="#">[Project]</a>
+      </div>
+      <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
+        [cite_start]Developed an open search agent achieving 88.3% on SimpleQA, outperforming GPT-4o Search Preview[cite: 39].
+      </p>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">AV-RIR: Audio-visual RIR estimation using multimodal multi-task learning</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, et al.</div>
+      <div class="pub-venue">CVPR 2024</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
+      </div>
+      </div>
+
+    <div class="pub-item">
+      <span class="pub-title">LipGER: Visually-conditioned ASR error-correction</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, et al.</div>
+      <div class="pub-venue">INTERSPEECH 2024</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
+      </div>
+      </div>
+
+    <div class="pub-item">
+      <span class="pub-title">CoSyn: Implicit hate-speech detection using TreeLSTM</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, et al.</div>
+      <div class="pub-venue">EMNLP 2023</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
+      </div>
+      </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Applied Scientist</div>
+        <div class="exp-org">Amazon (Alexa Trust)</div>
+        <div class="exp-desc">
+          Deployed Security Observer Model V5 defending against indirect prompt-injections. [cite_start]Optimized vLLM pipeline for 20M+ daily requests[cite: 21].
         </div>
-    </header>
+      </div>
+      <div class="exp-date">June 2025 – Present</div>
+    </div>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am an Applied Scientist at Amazon based in Bellevue, WA, specializing in LLM security and large-scale inference optimization[cite: 17, 18, 19, 21]. 
-            I hold a Master's in Computer Science from the University of Maryland [cite: 6, 7] and previously researched robust AI systems at the Sentient Foundation[cite: 24, 25].
-        </p>
-    </section>
-
-    <section>
-        <h2>Experience</h2>
-        
-        <div class="card">
-            <h3>Applied Scientist | Amazon</h3>
-            <span class="date">June 2025 – Present | Bellevue, WA</span>
-            <p>Developing the Security Observer Model V5 for Alexa. My work focuses on defending against indirect prompt-injection attacks using a vLLM pipeline serving 20M+ requests/day. I also lead latency optimization experiments to meet strict SLAs (p90 latency of 35ms).</p>
-            <div class="tags">
-                <span class="tag">LLM Security</span>
-                <span class="tag">vLLM</span>
-                <span class="tag">Inference Optimization</span>
-            </div>
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">AI Research Intern</div>
+        <div class="exp-org">Sentient Foundation</div>
+        <div class="exp-desc">
+          [cite_start]Engineered HPO platform and reasoning-agent orchestration layer for Open Deep Search[cite: 27, 29].
         </div>
+      </div>
+      <div class="exp-date">Dec 2024 – May 2025</div>
+    </div>
 
-        <div class="card">
-            <h3>AI Research Intern | Sentient Foundation</h3>
-            <span class="date">Dec 2024 – May 2025 | Remote</span>
-            <p>Engineered a production-grade hyperparameter-optimization (HPO) platform and the reasoning-agent orchestration layer for Open Deep Search (ODS). Implemented LiteLLM/SmolAgents integration and reduced finetuning cycles by 40%.</p>
-            <div class="tags">
-                <span class="tag">HPO</span>
-                <span class="tag">Reasoning Agents</span>
-                <span class="tag">LiteLLM</span>
-            </div>
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Applied Scientist Intern</div>
+        <div class="exp-org">Amazon</div>
+        <div class="exp-desc">
+          Developed gradient-based deterministic decoding controls for jailbreak defense. [cite_start]Accepted at AMLC 2024[cite: 34, 35].
         </div>
+      </div>
+      <div class="exp-date">May 2024 – Aug 2024</div>
+    </div>
+  </section>
 
-        <div class="card">
-            <h3>Applied Scientist Intern | Amazon</h3>
-            <span class="date">May 2024 – Aug 2024 | Bellevue, WA</span>
-            <p>Developed gradient-based decoding controls that reduced jailbreak success by 20%. Work accepted at Amazon Machine Learning Conference (AMLC) 2024.</p>
-            <div class="tags">
-                <span class="tag">Jailbreak Defense</span>
-                <span class="tag">Gradient Control</span>
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2>Education</h2>
+    
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">M.S. Computer Science</div>
+        <div class="exp-org">University of Maryland, College Park</div>
+      </div>
+      <div class="exp-date">2023 – 2025</div>
+    </div>
 
-    <section>
-        <h2>Selected Publications & Research</h2>
-        <ul>
-            <li>
-                <strong>SecRepoBench: Benchmarking LLMs for Secure Code Generation</strong><br>
-                Benchmarked 19 LLMs on 318 tasks across 27 C/C++ repos, revealing severe security gaps (secure-pass@1 drops to 28%).
-            </li>
-            <li>
-                <strong>Open Deep Search</strong><br>
-                Developed an open search agent achieving 88.3% on SimpleQA, outperforming GPT-4o Search Preview.
-            </li>
-            <li>
-                <strong>AV-RIR (CVPR 2024)</strong><br>
-                Audio-visual RIR estimation using multimodal multi-task learning.
-            </li>
-            <li>
-                <strong>LipGER (INTERSPEECH 2024)</strong><br>
-                Visually-conditioned ASR error-correction for noise robustness.
-            </li>
-             <li>
-                <strong>CoSyn (EMNLP 2023)</strong><br>
-                Implicit hate-speech detection using TreeLSTM + Hyperbolic GCN.
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="card">
-            <h3>University of Maryland, College Park</h3>
-            <span class="date">M.S. in Computer Science | 2023 – 2025</span>
-            <p>Coursework: Systems for ML, LLM Security, AI/ML at Scale, Advanced Optimization.</p>
-        </div>
-        <div class="card">
-            <h3>Indian Institute of Technology (IIT) Roorkee</h3>
-            <span class="date">B.Tech. in Electrical Engineering | 2017 – 2021</span>
-            <p>Awards: Best Project Award, Top Innovation Award.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Purva Chiniya. Hosted on GitHub Pages.</p>
-    </footer>
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">B.Tech. Electrical Engineering</div>
+        <div class="exp-org">Indian Institute of Technology (IIT) Roorkee</div>
+      </div>
+      <div class="exp-date">2017 – 2021</div>
+    </div>
+  </section>
+  
+  <footer style="margin-top: 60px; font-size: 0.8em; color: #888; text-align: center;">
+    <p>&copy; 2025 Purva Chiniya.</p>
+  </footer>
 
 </body>
 </html>
