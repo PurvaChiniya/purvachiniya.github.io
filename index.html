@@ -7,6 +7,8 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+  
   <style>
     body {
       background-color: #ffffff;
@@ -73,34 +75,19 @@
       color: #111;
     }
 
-    /* Publications List - Updated for Thumbnails */
+    /* Publications List (Clean Text Only) */
     .pub-item {
-      display: flex;
-      gap: 20px;
       margin-bottom: 30px;
-      align-items: flex-start;
     }
-
-    .pub-thumb {
-      width: 160px;
-      flex-shrink: 0; 
-      border-radius: 4px;
-      border: 1px solid #eee;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      display: none; /* Hidden by default until you add images. Remove this line when you add images! */
-    }
-
-    .pub-content { flex: 1; }
 
     .pub-title {
       font-weight: 700;
       color: #111;
       display: block;
+      font-size: 1.1em;
     }
-    .pub-authors { font-size: 0.95em; color: #444; }
     .pub-venue { font-style: italic; color: #666; font-size: 0.95em; }
     .pub-links { font-size: 0.9em; margin-top: 3px; }
-    .highlight { font-weight: 700; text-decoration: underline; }
 
     /* Experience & Education Lists */
     .exp-item {
@@ -124,8 +111,6 @@
       .profile-photo { margin-bottom: 20px; }
       .exp-item { flex-direction: column; }
       .exp-date { text-align: left; margin-bottom: 5px; font-size: 0.85em; }
-      .pub-item { flex-direction: column; }
-      .pub-thumb { width: 100%; max-width: 300px; margin-bottom: 10px; display: block; }
     }
   </style>
 </head>
@@ -136,14 +121,13 @@
     <div class="bio-text">
       <h1>Purva Chiniya</h1>
       <p>
-        I am an Applied Scientist at Amazon(Alexa Trust), where I build large-scale defense systems for Generative AI.
+        I am an <strong>Applied Scientist at Amazon (Alexa Trust)</strong>, where I build large-scale defense systems for Generative AI.
       </p>
       <p>
-        My primary focus is LLM Securit at production scale. Currently, I am working runtime defense systems protecting Alexa from multimodal indirect prompt-injection attacks.
+        My primary focus is <strong>LLM Security at production scale</strong>. Currently, I lead the development of runtime defense systems that protect Alexa from multimodal indirect prompt-injection attacks, serving millions of requests daily.
       </p>
       <p>
-        Previously, I was a Research Intern at the Sentient Foundation, where I engineered the orchestration layer for Open Deep Search and worked on HPO finetuning framework. I hold a Master's in Computer Science from the University of Maryland. 
-        Before that I explored software engineering at Cisco Sytems, after finishing my bachelors in electrical engineering from IIT Roorkee, in India. 
+        Previously, I was a Research Intern at the <strong>Sentient Foundation</strong>, where I engineered the orchestration layer for Open Deep Search and developed HPO finetuning frameworks. I hold a Master's in Computer Science from the <strong>University of Maryland</strong> and a B.Tech from <strong>IIT Roorkee</strong>.
       </p>
       
       <div class="social-links">
@@ -173,9 +157,9 @@
   <section>
     <h2>News & Updates</h2>
     <ul>
-      <li><strong>June 2025:</strong> Started as an Applied Scientist at Amazon[cite: 20].</li>
-      <li><strong>Dec 2024:</strong> Joined Sentient Foundation as an AI Research Intern[cite: 26].</li>
-      <li><strong>May 2024:</strong> Started Applied Scientist Internship at Amazon[cite: 33].</li>
+      <li><strong>June 2025:</strong> Started as an Applied Scientist at Amazon.</li>
+      <li><strong>Dec 2024:</strong> Joined Sentient Foundation as an AI Research Intern.</li>
+      <li><strong>May 2024:</strong> Started Applied Scientist Internship at Amazon.</li>
     </ul>
   </section>
 
@@ -183,60 +167,48 @@
     <h2>Selected Publications</h2>
 
     <div class="pub-item">
-      <img src="paper1.jpg" alt="Paper Teaser" class="pub-thumb">
-      
-      <div class="pub-content">
-        <span class="pub-title">SecRepoBench: Benchmarking LLMs for Secure Code Generation</span>
-        <div class="pub-venue">Preprint / In Submission</div>
-        <div class="pub-links">
-          <a href="#">[PDF]</a> <a href="#">[Code]</a>
-        </div>
-        <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
-          Benchmarked 19 LLMs on 318 tasks across 27 C/C++ repos, revealing severe security gaps with secure-pass@1 dropping to 28%[cite: 37, 38].
-        </p>
+      <span class="pub-title">SecRepoBench: Benchmarking LLMs for Secure Code Generation</span>
+      <div class="pub-venue">Preprint / In Submission</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a> <a href="#">[Code]</a>
+      </div>
+      <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
+        Benchmarked 19 LLMs on 318 tasks across 27 C/C++ repos, revealing severe security gaps with secure-pass@1 dropping to 28%.
+      </p>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">Open Deep Search</span>
+      <div class="pub-venue">Technical Report</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a> <a href="#">[Project]</a>
+      </div>
+      <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
+        Developed an open search agent achieving 88.3% on SimpleQA, outperforming GPT-4o Search Preview.
+      </p>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">AV-RIR: Audio-visual RIR estimation using multimodal multi-task learning</span>
+      <div class="pub-venue">CVPR 2024</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
       </div>
     </div>
 
     <div class="pub-item">
-      <div class="pub-content">
-        <span class="pub-title">Open Deep Search</span>
-        <div class="pub-venue">Technical Report</div>
-        <div class="pub-links">
-          <a href="#">[PDF]</a> <a href="#">[Project]</a>
-        </div>
-        <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
-          Developed an open search agent achieving 88.3% on SimpleQA, outperforming GPT-4o Search Preview[cite: 29, 39].
-        </p>
+      <span class="pub-title">LipGER: Visually-conditioned ASR error-correction</span>
+      <div class="pub-venue">INTERSPEECH 2024</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
       </div>
     </div>
 
     <div class="pub-item">
-      <div class="pub-content">
-        <span class="pub-title">AV-RIR: Audio-visual RIR estimation using multimodal multi-task learning</span>
-        <div class="pub-venue">CVPR 2024</div>
-        <div class="pub-links">
-          <a href="#">[PDF]</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-content">
-        <span class="pub-title">LipGER: Visually-conditioned ASR error-correction</span>
-        <div class="pub-venue">INTERSPEECH 2024</div>
-        <div class="pub-links">
-          <a href="#">[PDF]</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-content">
-        <span class="pub-title">CoSyn: Implicit hate-speech detection using TreeLSTM</span>
-        <div class="pub-venue">EMNLP 2023</div>
-        <div class="pub-links">
-          <a href="#">[PDF]</a>
-        </div>
+      <span class="pub-title">CoSyn: Implicit hate-speech detection using TreeLSTM</span>
+      <div class="pub-venue">EMNLP 2023</div>
+      <div class="pub-links">
+        <a href="#">[PDF]</a>
       </div>
     </div>
   </section>
@@ -260,7 +232,7 @@
         <div class="exp-role">AI Research Intern</div>
         <div class="exp-org">Sentient Foundation</div>
         <div class="exp-desc">
-          Engineered HPO platform and reasoning-agent orchestration layer for Open Deep Search[cite: 27, 29].
+          Engineered HPO platform and reasoning-agent orchestration layer for Open Deep Search.
         </div>
       </div>
       <div class="exp-date">Dec 2024 – May 2025</div>
@@ -271,7 +243,7 @@
         <div class="exp-role">Applied Scientist Intern</div>
         <div class="exp-org">Amazon</div>
         <div class="exp-desc">
-          Developed gradient-based deterministic decoding controls for jailbreak defense. Accepted at AMLC 2024[cite: 34, 35].
+          Developed gradient-based deterministic decoding controls for jailbreak defense. Accepted at AMLC 2024.
         </div>
       </div>
       <div class="exp-date">May 2024 – Aug 2024</div>
