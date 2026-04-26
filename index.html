@@ -184,48 +184,95 @@
       font-weight: 500;
     }
 
-    /* ── Experience / Education ──────────────────────── */
-    .exp-item {
+    /* ── Timeline Experience ─────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 36px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .tl-dot {
+      position: absolute;
+      left: -33px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--accent);
+      z-index: 1;
+    }
+    .tl-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      transition: box-shadow 0.15s;
+    }
+    .tl-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); }
+    .tl-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .company-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      object-fit: contain;
+      padding: 4px;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .tl-meta { flex: 1; }
+    .exp-role { font-weight: 600; font-size: 0.97em; color: var(--text); line-height: 1.3; }
+    .exp-org  { font-size: 0.83em; color: var(--muted); margin-top: 1px; }
+    .tl-date {
+      font-size: 0.78em;
+      color: #fff;
+      background: #444;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      align-self: flex-start;
+      flex-shrink: 0;
+    }
+    .exp-desc {
+      font-size: 0.88em;
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Education (simple list) ─────────────────────── */
+    .edu-item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 16px;
-      margin-bottom: 22px;
-      padding-bottom: 22px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
     }
-    .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
-
-    .exp-role { font-weight: 600; color: var(--text); }
-    .exp-org  { color: var(--muted); font-size: 0.88em; margin-top: 1px; }
-    .exp-desc {
-      font-size: 0.88em;
-      color: #555;
-      margin-top: 6px;
-      line-height: 1.55;
-      padding-left: 0;
-      list-style: none;
-    }
-    .exp-desc li {
-      padding-left: 14px;
-      position: relative;
-      margin-bottom: 3px;
-    }
-    .exp-desc li::before {
-      content: "·";
-      position: absolute;
-      left: 0;
-      color: var(--light);
-      font-weight: 700;
-    }
-    .exp-date {
-      color: var(--light);
-      font-size: 0.85em;
-      white-space: nowrap;
-      text-align: right;
-      min-width: 120px;
-      padding-top: 2px;
-    }
+    .edu-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .edu-role { font-weight: 600; color: var(--text); font-size: 0.95em; }
+    .edu-org  { color: var(--muted); font-size: 0.88em; margin-top: 2px; }
+    .edu-note { font-size: 0.84em; color: var(--light); margin-top: 3px; }
+    .edu-date { color: var(--light); font-size: 0.85em; white-space: nowrap; text-align: right; min-width: 90px; }
 
     /* ── Footer ──────────────────────────────────────── */
     footer {
@@ -241,8 +288,10 @@
       .bio-text { min-width: unset; }
       .social-links { justify-content: center; }
       .profile-photo { margin-bottom: 4px; }
-      .exp-item { flex-direction: column; }
-      .exp-date { text-align: left; }
+      .tl-header { flex-wrap: wrap; gap: 8px; }
+      .tl-date { align-self: auto; }
+      .edu-item { flex-direction: column; }
+      .edu-date { text-align: left; }
     }
   </style>
 </head>
@@ -357,52 +406,68 @@
   <!-- ── Experience ─────────────────────────────────────── -->
   <section>
     <h2>Experience</h2>
+    <div class="timeline">
 
-    <div class="exp-item">
-      <div>
-        <div class="exp-role">Applied Scientist, Amazon Ads</div>
-        <div class="exp-org">Amazon · Bellevue, WA</div>
-        <ul class="exp-desc">
-          <li>Building multi-agent systems for Sponsored Products, automating campaign optimization for 1M+ advertisers.</li>
-          <li>Deployed Alexa+ safety model on vLLM handling 80M+ daily requests at 35ms P90, peaking at 70K TPS.</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <img class="company-logo" src="https://logo.clearbit.com/amazon.com" alt="Amazon" onerror="this.style.display='none'">
+            <div class="tl-meta">
+              <div class="exp-role">Applied Scientist, Amazon Ads</div>
+              <div class="exp-org">Amazon · Bellevue, WA</div>
+            </div>
+            <div class="tl-date">Jun 2025 – Present</div>
+          </div>
+          <p class="exp-desc">Building multi-agent systems for Sponsored Products, automating campaign optimization for 1M+ advertisers. Deployed Alexa+ safety model on vLLM handling 80M+ daily requests at 35ms P90, peaking at 70K TPS.</p>
+        </div>
       </div>
-      <div class="exp-date">Jun 2025 – Present</div>
-    </div>
 
-    <div class="exp-item">
-      <div>
-        <div class="exp-role">AI Research Intern</div>
-        <div class="exp-org">Sentient Foundation · Remote</div>
-        <ul class="exp-desc">
-          <li>Built Open Deep Search — SOTA 75.3% on FRAMES, outperforming GPT-4o Search Preview by 9.7%.</li>
-          <li>Developed CodeAct orchestration layer and HPO pipeline cutting fine-tuning iterations by 30%.</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <img class="company-logo" src="https://logo.clearbit.com/sentient.xyz" alt="Sentient" onerror="this.style.display='none'">
+            <div class="tl-meta">
+              <div class="exp-role">AI Research Intern</div>
+              <div class="exp-org">Sentient Foundation · Remote</div>
+            </div>
+            <div class="tl-date">Dec 2024 – May 2025</div>
+          </div>
+          <p class="exp-desc">Built Open Deep Search — a reasoning agent achieving SOTA 75.3% on FRAMES, outperforming GPT-4o Search Preview by 9.7%. Developed the CodeAct orchestration layer and an HPO pipeline cutting fine-tuning iterations by 30%.</p>
+        </div>
       </div>
-      <div class="exp-date">Dec 2024 – May 2025</div>
-    </div>
 
-    <div class="exp-item">
-      <div>
-        <div class="exp-role">Applied Scientist Intern</div>
-        <div class="exp-org">Amazon · Bellevue, WA</div>
-        <ul class="exp-desc">
-          <li>Inference-time safety steering via classifier gradients — 20% ASR reduction, 50% fewer false refusals.</li>
-          <li>Research accepted at AMLC 2024 and LREC 2026.</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <img class="company-logo" src="https://logo.clearbit.com/amazon.com" alt="Amazon" onerror="this.style.display='none'">
+            <div class="tl-meta">
+              <div class="exp-role">Applied Scientist Intern</div>
+              <div class="exp-org">Amazon · Bellevue, WA</div>
+            </div>
+            <div class="tl-date">May 2024 – Aug 2024</div>
+          </div>
+          <p class="exp-desc">Engineered inference-time safety steering via classifier gradients — 20% reduction in Attack Success Rate, 50% fewer false refusals. Research accepted at AMLC 2024 and LREC 2026.</p>
+        </div>
       </div>
-      <div class="exp-date">May 2024 – Aug 2024</div>
-    </div>
 
-    <div class="exp-item">
-      <div>
-        <div class="exp-role">Software Engineer II</div>
-        <div class="exp-org">Cisco Systems · Bangalore, India</div>
-        <ul class="exp-desc">
-          <li>Optimized C++ BGP routing for Google peering traffic, driving a 16% revenue increase for the XR Business Unit.</li>
-        </ul>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <img class="company-logo" src="https://logo.clearbit.com/cisco.com" alt="Cisco" onerror="this.style.display='none'">
+            <div class="tl-meta">
+              <div class="exp-role">Software Engineer II</div>
+              <div class="exp-org">Cisco Systems · Bangalore, India</div>
+            </div>
+            <div class="tl-date">Aug 2021 – Aug 2023</div>
+          </div>
+          <p class="exp-desc">Optimized C++ BGP routing modules for Google peering traffic, resolving critical concurrency bottlenecks to drive a 16% revenue increase for the XR Business Unit.</p>
+        </div>
       </div>
-      <div class="exp-date">Aug 2021 – Aug 2023</div>
+
     </div>
   </section>
 
@@ -410,21 +475,21 @@
   <section>
     <h2>Education</h2>
 
-    <div class="exp-item">
+    <div class="edu-item">
       <div>
-        <div class="exp-role">M.S. Computer Science</div>
-        <div class="exp-org">University of Maryland, College Park</div>
+        <div class="edu-role">M.S. Computer Science</div>
+        <div class="edu-org">University of Maryland, College Park</div>
       </div>
-      <div class="exp-date">2023 – 2025</div>
+      <div class="edu-date">2023 – 2025</div>
     </div>
 
-    <div class="exp-item">
+    <div class="edu-item">
       <div>
-        <div class="exp-role">B.Tech. Electrical Engineering</div>
-        <div class="exp-org">Indian Institute of Technology (IIT) Roorkee</div>
-        <div class="exp-desc">Awards: Best Project Award, Top Innovation Award</div>
+        <div class="edu-role">B.Tech. Electrical Engineering</div>
+        <div class="edu-org">Indian Institute of Technology (IIT) Roorkee</div>
+        <div class="edu-note">Awards: Best Project Award, Top Innovation Award</div>
       </div>
-      <div class="exp-date">2017 – 2021</div>
+      <div class="edu-date">2017 – 2021</div>
     </div>
   </section>
 
