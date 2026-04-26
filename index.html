@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purva Chiniya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Purva Chiniya – Applied Scientist at Amazon Ads working on agents.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --text:       #1a1a1a;
+      --muted:      #555;
+      --light:      #888;
+      --accent:     #1a56db;
+      --border:     #e8e8e8;
+      --bg:         #ffffff;
+      --tag-bg:     #f0f4ff;
+      --tag-text:   #2d4bb4;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 15.5px;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ──────────────────────────────────────── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+    }
+
+    .bio-text { flex: 1; min-width: 280px; }
+
+    .bio-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4em;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .bio-subtitle {
+      font-size: 0.95em;
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-weight: 500;
+    }
+
+    .bio-text p { margin: 0 0 13px; color: #333; }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.83em;
+      font-weight: 500;
+      color: var(--muted);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .social-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 7px 16px;
+      background: var(--text);
+      color: #fff !important;
+      border-radius: 6px;
+      font-size: 0.84em;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .resume-btn:hover { background: #333; text-decoration: none !important; }
+
+    .profile-photo {
+      width: 185px;
+      height: 185px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    /* ── Sections ────────────────────────────────────── */
+    section { margin-top: 52px; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25em;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 9px;
+      margin: 0 0 26px;
+      color: var(--text);
+    }
+
+    /* ── News ────────────────────────────────────────── */
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.94em;
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date {
+      display: inline-block;
+      min-width: 90px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── Publications ────────────────────────────────── */
+    .pub-item {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .pub-title {
+      display: block;
+      font-size: 1em;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+    .pub-authors { font-size: 0.88em; color: var(--muted); margin-bottom: 3px; }
+    .pub-venue {
+      font-style: italic;
+      color: var(--light);
+      font-size: 0.88em;
+    }
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .pub-links { font-size: 0.85em; }
+    .pub-links a { margin-right: 8px; font-weight: 500; }
+    .cite-badge {
+      font-size: 0.78em;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    /* ── Experience / Education ──────────────────────── */
+    .exp-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .exp-role { font-weight: 600; color: var(--text); }
+    .exp-org  { color: var(--muted); font-size: 0.93em; }
+    .exp-desc {
+      font-size: 0.88em;
+      color: #666;
+      margin-top: 5px;
+      line-height: 1.55;
+    }
+    .exp-date {
+      color: var(--light);
+      font-size: 0.85em;
+      white-space: nowrap;
+      text-align: right;
+      min-width: 120px;
+      padding-top: 2px;
+    }
+
+    /* ── Stats row ───────────────────────────────────── */
+    .scholar-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .stat-box { text-align: center; }
+    .stat-num { font-size: 1.7em; font-weight: 600; color: var(--text); line-height: 1; }
+    .stat-label { font-size: 0.78em; color: var(--light); margin-top: 3px; }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      margin-top: 72px;
+      font-size: 0.8em;
+      color: var(--light);
+      text-align: center;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 600px) {
+      header { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .bio-text { min-width: unset; }
+      .social-links { justify-content: center; }
+      .profile-photo { margin-bottom: 4px; }
+      .exp-item { flex-direction: column; }
+      .exp-date { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="bio-text">
+      <h1>Purva Chiniya</h1>
+      <p class="bio-subtitle">Applied Scientist · Amazon Ads · Agents</p>
+
+      <p>
+        I am an Applied Scientist at Amazon Ads, where I work on agents.
+      </p>
+      <p>
+        My research spans <strong>LLM security</strong>, <strong>multimodal AI</strong>, audio-visual perception, and robust speech recognition. Previously I was an AI Research Intern at the Sentient Foundation, where I built the orchestration layer for <a href="https://arxiv.org/abs/2503.20201">Open Deep Search</a>.
+      </p>
+      <p>
+        I hold an M.S. in Computer Science from the University of Maryland, College Park and a B.Tech. from IIT Roorkee.
+      </p>
+
+      <div class="social-links">
+        <a href="mailto:purvachiniya15@gmail.com">✉ Email</a>
+        <a href="https://scholar.google.com/citations?user=c9aJlxcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://github.com/PurvaChiniya" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/purva-chiniya" target="_blank">LinkedIn</a>
+      </div>
+      <a href="Purva_Chiniya_Resume.pdf" class="resume-btn">Download CV</a>
+    </div>
+
+    <img src="profile.jpeg" alt="Purva Chiniya" class="profile-photo">
+  </header>
+
+  <!-- ── News ─────────────────────────────────────────── -->
+  <section>
+    <h2>News &amp; Updates</h2>
+    <ul class="news-list">
+      <li><span class="news-date">Apr 2026</span> Preprint out: <em>Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Optimization</em>.</li>
+      <li><span class="news-date">Jun 2025</span> Started as Applied Scientist at Amazon (Alexa Trust).</li>
+      <li><span class="news-date">Mar 2025</span> <em>Open Deep Search</em> technical report released — 88.3% on SimpleQA, outperforming GPT-4o Search Preview.</li>
+      <li><span class="news-date">Dec 2024</span> Joined Sentient Foundation as AI Research Intern.</li>
+      <li><span class="news-date">May 2024</span> Started Applied Scientist Internship at Amazon.</li>
+      <li><span class="news-date">May 2024</span> <em>AV-RIR</em> accepted at CVPR 2024.</li>
+      <li><span class="news-date">May 2024</span> <em>LipGER</em> accepted at INTERSPEECH 2024.</li>
+    </ul>
+  </section>
+
+  <!-- ── Publications ──────────────────────────────────── -->
+  <section>
+    <h2>Publications</h2>
+
+    <div class="scholar-stats">
+      <div class="stat-box"><div class="stat-num">156</div><div class="stat-label">Citations</div></div>
+      <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">h-index</div></div>
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">i10-index</div></div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Optimization</span>
+      <div class="pub-authors">Purva Chiniya et al.</div>
+      <div class="pub-venue">Preprint, 2026</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="#">[PDF]</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">Open Deep Search: Democratizing Search with Open-Source Reasoning Agents</span>
+      <div class="pub-authors">Salaheddin Alzubi, Purva Chiniya, et al.</div>
+      <div class="pub-venue">Technical Report, 2025</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="https://arxiv.org/abs/2503.20201" target="_blank">[PDF]</a> <a href="https://github.com/sentient-engineering/open-deep-search" target="_blank">[Code]</a></div>
+        <span class="cite-badge">53 citations</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">SecRepoBench: Benchmarking LLMs for Secure Code Generation in Repositories</span>
+      <div class="pub-authors">Purva Chiniya, Yizheng Chen, et al.</div>
+      <div class="pub-venue">Preprint / In Submission, 2025</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="#">[PDF]</a> <a href="#">[Code]</a></div>
+        <span class="cite-badge">15 citations</span>
+      </div>
+      <p style="font-size:0.88em;color:#666;margin-top:7px;">
+        Benchmarked 19 LLMs on 318 tasks across 27 C/C++ repositories, revealing severe security gaps with secure-pass@1 dropping to 28%.
+      </p>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">AV-RIR: Audio-Visual Room Impulse Response Estimation</span>
+      <div class="pub-authors">Anton Jeran Ratnarajah, Purva Chiniya, et al.</div>
+      <div class="pub-venue">CVPR 2024</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="#">[PDF]</a></div>
+        <span class="cite-badge">47 citations</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">LipGER: Visually-Conditioned Generative Error Correction for Robust Automatic Speech Recognition</span>
+      <div class="pub-authors">Purva Chiniya, et al.</div>
+      <div class="pub-venue">INTERSPEECH 2024</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="#">[PDF]</a></div>
+        <span class="cite-badge">7 citations</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-title">CoSyn: Detecting Implicit Hate Speech in Online Conversations Using a Context Synergized Hyperbolic Network</span>
+      <div class="pub-authors">Purva Chiniya, et al.</div>
+      <div class="pub-venue">EMNLP 2023</div>
+      <div class="pub-meta">
+        <div class="pub-links"><a href="#">[PDF]</a></div>
+        <span class="cite-badge">34 citations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ─────────────────────────────────────── -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Applied Scientist</div>
+        <div class="exp-org">Amazon Ads</div>
+        <div class="exp-desc">
+          Working on agents.
+        </div>
+      </div>
+      <div class="exp-date">Jun 2025 – Present</div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">AI Research Intern</div>
+        <div class="exp-org">Sentient Foundation</div>
+        <div class="exp-desc">
+          Engineered the reasoning-agent orchestration layer for Open Deep Search and developed HPO fine-tuning frameworks. Co-authored the Open Deep Search technical report.
+        </div>
+      </div>
+      <div class="exp-date">Dec 2024 – May 2025</div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Applied Scientist Intern</div>
+        <div class="exp-org">Amazon</div>
+        <div class="exp-desc">
+          Developed gradient-based deterministic decoding controls for LLM jailbreak defense. Work presented at AMLC 2024.
+        </div>
+      </div>
+      <div class="exp-date">May 2024 – Aug 2024</div>
+    </div>
+  </section>
+
+  <!-- ── Education ──────────────────────────────────────── -->
+  <section>
+    <h2>Education</h2>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">M.S. Computer Science</div>
+        <div class="exp-org">University of Maryland, College Park</div>
+      </div>
+      <div class="exp-date">2023 – 2025</div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">B.Tech. Electrical Engineering</div>
+        <div class="exp-org">Indian Institute of Technology (IIT) Roorkee</div>
+      </div>
+      <div class="exp-date">2017 – 2021</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Purva Chiniya &nbsp;·&nbsp; Last updated April 2026</p>
+  </footer>
+
+</body>
+</html>
