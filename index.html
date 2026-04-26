@@ -197,12 +197,26 @@
     .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
 
     .exp-role { font-weight: 600; color: var(--text); }
-    .exp-org  { color: var(--muted); font-size: 0.93em; }
+    .exp-org  { color: var(--muted); font-size: 0.88em; margin-top: 1px; }
     .exp-desc {
       font-size: 0.88em;
-      color: #666;
-      margin-top: 5px;
+      color: #555;
+      margin-top: 6px;
       line-height: 1.55;
+      padding-left: 0;
+      list-style: none;
+    }
+    .exp-desc li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+    .exp-desc li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--light);
+      font-weight: 700;
     }
     .exp-date {
       color: var(--light);
@@ -347,10 +361,11 @@
     <div class="exp-item">
       <div>
         <div class="exp-role">Applied Scientist, Amazon Ads</div>
-        <div class="exp-org">Amazon.com · Bellevue, WA</div>
-        <div class="exp-desc">
-          Architecting a multi-agent autonomous framework for Sponsored Products using LLM-based reasoning agents to automate campaign optimizations for 1M+ advertisers. Deployed a runtime safety model for Alexa+ on a vLLM inference engine handling 80M+ daily requests at 35ms P90 latency, peaking at 70,000 TPS. Directed alignment via Adversarial Fine-Tuning on 7B+ models, boosting precision 8× and cutting false positive rate by 97%.
-        </div>
+        <div class="exp-org">Amazon · Bellevue, WA</div>
+        <ul class="exp-desc">
+          <li>Building multi-agent systems for Sponsored Products, automating campaign optimization for 1M+ advertisers.</li>
+          <li>Deployed Alexa+ safety model on vLLM handling 80M+ daily requests at 35ms P90, peaking at 70K TPS.</li>
+        </ul>
       </div>
       <div class="exp-date">Jun 2025 – Present</div>
     </div>
@@ -359,9 +374,10 @@
       <div>
         <div class="exp-role">AI Research Intern</div>
         <div class="exp-org">Sentient Foundation · Remote</div>
-        <div class="exp-desc">
-          Built Open Deep Search, a reasoning agent achieving SOTA (75.3%) on FRAMES, outperforming GPT-4o Search Preview by 9.7%. Built the CodeAct orchestration layer using SmolAgents and LiteLLM for multi-step reasoning. Developed an HPO fine-tuning pipeline cutting tuning iterations by 30% across 3B–70B parameter models.
-        </div>
+        <ul class="exp-desc">
+          <li>Built Open Deep Search — SOTA 75.3% on FRAMES, outperforming GPT-4o Search Preview by 9.7%.</li>
+          <li>Developed CodeAct orchestration layer and HPO pipeline cutting fine-tuning iterations by 30%.</li>
+        </ul>
       </div>
       <div class="exp-date">Dec 2024 – May 2025</div>
     </div>
@@ -369,10 +385,11 @@
     <div class="exp-item">
       <div>
         <div class="exp-role">Applied Scientist Intern</div>
-        <div class="exp-org">Amazon.com · Bellevue, WA</div>
-        <div class="exp-desc">
-          Engineered an inference-time safety steering mechanism using classifier gradients to guide decoding, achieving a 20% reduction in Attack Success Rate on AdvBench while cutting false refusal rates by 50%. Research accepted at AMLC 2024 and LREC 2026.
-        </div>
+        <div class="exp-org">Amazon · Bellevue, WA</div>
+        <ul class="exp-desc">
+          <li>Inference-time safety steering via classifier gradients — 20% ASR reduction, 50% fewer false refusals.</li>
+          <li>Research accepted at AMLC 2024 and LREC 2026.</li>
+        </ul>
       </div>
       <div class="exp-date">May 2024 – Aug 2024</div>
     </div>
@@ -381,9 +398,9 @@
       <div>
         <div class="exp-role">Software Engineer II</div>
         <div class="exp-org">Cisco Systems · Bangalore, India</div>
-        <div class="exp-desc">
-          Optimized C++ BGP routing modules for Google peering traffic, resolving critical concurrency bottlenecks to drive a 16% revenue increase for the XR Business Unit via enhanced service availability.
-        </div>
+        <ul class="exp-desc">
+          <li>Optimized C++ BGP routing for Google peering traffic, driving a 16% revenue increase for the XR Business Unit.</li>
+        </ul>
       </div>
       <div class="exp-date">Aug 2021 – Aug 2023</div>
     </div>
