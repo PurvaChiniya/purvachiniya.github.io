@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <title>Purva Chiniya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Purva Chiniya – Applied Scientist at Amazon Ads working on agents.">
+  <meta name="description" content="Purva Chiniya is an applied scientist researching secure and reliable LLM agents, code security, and runtime guardrails.">
+  <link rel="canonical" href="https://purvachiniya.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Purva Chiniya · Applied Scientist">
+  <meta property="og:description" content="Research on secure and reliable LLM agents, code security, and runtime guardrails.">
+  <meta property="og:url" content="https://purvachiniya.github.io/">
+  <meta property="og:image" content="https://purvachiniya.github.io/profile.jpeg">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
@@ -16,7 +22,7 @@
     :root {
       --text:       #1a1a1a;
       --muted:      #555;
-      --light:      #888;
+      --light:      #666;
       --accent:     #1a56db;
       --border:     #e8e8e8;
       --bg:         #ffffff;
@@ -38,6 +44,18 @@
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .skip-link {
+      position: absolute;
+      left: 24px;
+      top: -60px;
+      padding: 8px 12px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      z-index: 10;
+    }
+    .skip-link:focus { top: 12px; }
 
     /* ── Header ──────────────────────────────────────── */
     header {
@@ -150,6 +168,39 @@
       color: var(--text);
     }
 
+    /* ── Selected Research ───────────────────────────── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .research-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #f8faff;
+      padding: 17px 18px;
+    }
+    .research-card h3 {
+      font-size: 1em;
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+    .research-card p {
+      color: var(--muted);
+      font-size: 0.87em;
+      line-height: 1.55;
+      margin: 0 0 10px;
+    }
+    .research-card .research-venue {
+      color: var(--light);
+      font-size: 0.78em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .research-card .research-links { font-size: 0.82em; font-weight: 600; }
+    .research-card .research-links a + a { margin-left: 12px; }
+
     /* ── Publications ────────────────────────────────── */
     .pub-item {
       margin-bottom: 14px;
@@ -166,7 +217,8 @@
       margin-bottom: 1px;
       line-height: 1.4;
     }
-    .pub-authors { font-size: 0.88em; color: var(--muted); margin-bottom: 1px; }
+    .pub-authors { font-size: 0.85em; color: var(--muted); line-height: 1.5; margin-bottom: 2px; }
+    .pub-authors strong { color: var(--text); }
     .pub-venue {
       font-style: italic;
       color: var(--light);
@@ -302,6 +354,7 @@
       .bio-text { min-width: unset; }
       .social-links { justify-content: center; }
       .profile-photo { margin-bottom: 4px; }
+      .research-grid { grid-template-columns: 1fr; }
       .tl-header { flex-wrap: wrap; gap: 8px; }
       .tl-date { align-self: auto; }
       .edu-item { flex-direction: column; }
@@ -310,6 +363,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header>
     <div class="bio-text">
@@ -317,7 +371,7 @@
       <p class="bio-subtitle">Applied Scientist · Amazon Ads, Sponsored Products</p>
 
       <p>
-        I am an Applied Scientist at Amazon Ads building large-scale multi-agent systems for sponsored products. My research spans agentic systems, LLM &amp; code security, and multimodal AI.
+        I am an Applied Scientist at Amazon Ads building multi-agent systems for sponsored products. My research focuses on secure and reliable LLM agents, from code-security benchmarks and runtime guardrails to reasoning and search systems.
       </p>
       <p>
         Previously at Amazon Alexa Trust, I led the deployment of runtime defense models protecting Alexa from indirect prompt-injection attacks. Before that, I was an AI Research Intern at the Sentient Foundation, where I worked on deep search agents and agentic orchestration for <a href="https://arxiv.org/abs/2503.20201">Open Deep Search</a>.
@@ -331,15 +385,15 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Email
         </a>
-        <a href="https://scholar.google.com/citations?user=c9aJlxcAAAAJ&hl=en" target="_blank">
+        <a href="https://scholar.google.com/citations?user=c9aJlxcAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
           Google Scholar
         </a>
-        <a href="https://github.com/PurvaChiniya" target="_blank">
+        <a href="https://github.com/PurvaChiniya" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/pchiniya/" target="_blank">
+        <a href="https://www.linkedin.com/in/pchiniya/" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
@@ -350,14 +404,40 @@
     <img src="profile.jpeg" alt="Purva Chiniya" class="profile-photo">
   </header>
 
+  <main id="main-content">
+  <!-- ── Selected Research ──────────────────────────────── -->
+  <section id="research" aria-labelledby="research-heading">
+    <h2 id="research-heading">Selected Research</h2>
+    <div class="research-grid">
+      <article class="research-card">
+        <div class="research-venue">LREC 2026 · LLM safety</div>
+        <h3>Gradient-Controlled Decoding</h3>
+        <p>A training-free guardrail using acceptance and refusal anchors to detect unsafe prompts and steer the start of decoding.</p>
+        <div class="research-links"><a href="https://aclanthology.org/2026.lrec-1.775/">Paper</a></div>
+      </article>
+      <article class="research-card">
+        <div class="research-venue">LLM4Code 2026 · Code security</div>
+        <h3>SecRepoBench</h3>
+        <p>A 318-task benchmark across 27 C/C++ repositories that evaluates both functional correctness and security of code completions.</p>
+        <div class="research-links"><a href="https://arxiv.org/abs/2504.21205">Paper</a><a href="https://secrepobench.github.io/">Project</a><a href="https://github.com/ai-sec-lab/SecRepoBench">Code</a></div>
+      </article>
+      <article class="research-card">
+        <div class="research-venue">2025 technical report · Agentic search</div>
+        <h3>Open Deep Search</h3>
+        <p>An open-source search tool and reasoning agent for complex questions, evaluated on SimpleQA and FRAMES.</p>
+        <div class="research-links"><a href="https://arxiv.org/abs/2503.20201">Paper</a><a href="https://github.com/sentient-engineering/open-deep-search">Code</a></div>
+      </article>
+    </div>
+  </section>
+
   <!-- ── News ─────────────────────────────────────────── -->
   <section>
     <h2>News &amp; Updates</h2>
     <ul class="news-list" tabindex="0" aria-label="News and updates, scroll for more">
       <li><span class="news-date">Oct 2026</span> Presented <em>Compute, Latency, and Safety: Architecting Stateful Guardrails for Multi-Agent Workflows</em> at PyTorch Conference North America. <a href="slides/pytorch-conference-2026-purva-chiniya.pdf">[Slides]</a> <a href="https://events.linuxfoundation.org/pytorch-conference-north-america/program/schedule/?id=1251388" target="_blank" rel="noopener noreferrer">[Session]</a></li>
-      <li><span class="news-date">Apr 2026</span> Paper accepted at LREC 2026: <em>Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Optimization</em>.</li>
+      <li><span class="news-date">May 2026</span> <a href="https://aclanthology.org/2026.lrec-1.775/"><em>Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Steering</em></a> published at LREC 2026.</li>
       <li><span class="news-date">Jun 2025</span> Started as Applied Scientist at Amazon Ads.</li>
-      <li><span class="news-date">Mar 2025</span> <em>Open Deep Search</em> technical report released — 88.3% on SimpleQA, outperforming GPT-4o Search Preview.</li>
+      <li><span class="news-date">Mar 2025</span> <a href="https://arxiv.org/abs/2503.20201"><em>Open Deep Search</em></a> technical report released — 88.3% on SimpleQA and 75.3% on FRAMES, 9.7 points above GPT-4o Search Preview on FRAMES.</li>
       <li><span class="news-date">Dec 2024</span> Joined Sentient Foundation as AI Research Intern.</li>
       <li><span class="news-date">May 2024</span> Started Applied Scientist Internship at Amazon.</li>
       <li><span class="news-date">May 2024</span> <em>AV-RIR</em> accepted at CVPR 2024.</li>
@@ -371,50 +451,56 @@
     <h2>Publications</h2>
 
     <div class="pub-item">
-      <span class="pub-title">Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Optimization</span>
+      <span class="pub-title">Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Steering</span>
+      <div class="pub-authors"><strong>Purva Chiniya</strong>, Kevin Joseph Scaria, Sagar Chaturvedi</div>
       <div class="pub-venue">LREC 2026</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="#">[PDF]</a></div>
+        <div class="pub-links"><a href="https://aclanthology.org/2026.lrec-1.775/">[Paper]</a> <a href="https://aclanthology.org/2026.lrec-1.775.pdf">[PDF]</a></div>
       </div>
     </div>
 
     <div class="pub-item">
-      <span class="pub-title">Open Deep Search: Democratizing Search with Open-Source Reasoning Agents</span>
-      <div class="pub-venue">Technical Report, 2025</div>
+      <span class="pub-title">SecRepoBench: Benchmarking Code Agents for Secure Code Completion in Real-World Repositories</span>
+      <div class="pub-authors">Chihao Shen, Connor Dilgren, <strong>Purva Chiniya</strong>, Luke Griffith, Yu Ding, Yizheng Chen</div>
+      <div class="pub-venue">LLM4Code 2026</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="https://arxiv.org/abs/2503.20201" target="_blank">[arXiv]</a> <a href="https://github.com/sentient-engineering/open-deep-search" target="_blank">[Code]</a></div>
+        <div class="pub-links"><a href="https://arxiv.org/abs/2504.21205">[Paper]</a> <a href="https://secrepobench.github.io/">[Project]</a> <a href="https://github.com/ai-sec-lab/SecRepoBench">[Code]</a> <a href="https://huggingface.co/datasets/ai-sec-lab/SecRepoBench">[Dataset]</a></div>
       </div>
     </div>
 
     <div class="pub-item">
-      <span class="pub-title">SecRepoBench: Benchmarking LLMs for Secure Code Generation in Repositories</span>
-      <div class="pub-venue"><a href="https://llm4code.github.io/" target="_blank">LLM4Code 2026</a></div>
+      <span class="pub-title">Open Deep Search: Democratizing Search with Open-source Reasoning Agents</span>
+      <div class="pub-authors">Salaheddin Alzubi, Creston Brooks, <strong>Purva Chiniya</strong>, Edoardo Contente, Chiara von Gerlach, Lucas Irwin, Yihan Jiang, Arda Kaz, Windsor Nguyen, Sewoong Oh, Himanshu Tyagi, Pramod Viswanath</div>
+      <div class="pub-venue">Technical report, 2025</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="https://arxiv.org/abs/2504.21205" target="_blank">[arXiv]</a></div>
+        <div class="pub-links"><a href="https://arxiv.org/abs/2503.20201">[Paper]</a> <a href="https://github.com/sentient-engineering/open-deep-search">[Code]</a></div>
       </div>
     </div>
 
     <div class="pub-item">
       <span class="pub-title">AV-RIR: Audio-Visual Room Impulse Response Estimation</span>
+      <div class="pub-authors">Anton Ratnarajah, Sreyan Ghosh, Sonal Kumar, <strong>Purva Chiniya</strong>, Dinesh Manocha</div>
       <div class="pub-venue">CVPR 2024</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="https://arxiv.org/abs/2312.00834" target="_blank">[arXiv]</a></div>
+        <div class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Ratnarajah_AV-RIR_Audio-Visual_Room_Impulse_Response_Estimation_CVPR_2024_paper.html">[Paper]</a> <a href="https://anton-jeran.github.io/AVRIR/">[Project]</a> <a href="https://github.com/anton-jeran/AV-RIR">[Code]</a></div>
       </div>
     </div>
 
     <div class="pub-item">
       <span class="pub-title">LipGER: Visually-Conditioned Generative Error Correction for Robust Automatic Speech Recognition</span>
+      <div class="pub-authors">Sreyan Ghosh, Sonal Kumar, Ashish Seth, <strong>Purva Chiniya</strong>, Utkarsh Tyagi, Ramani Duraiswami, Dinesh Manocha</div>
       <div class="pub-venue">INTERSPEECH 2024</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="https://arxiv.org/abs/2406.04432" target="_blank">[arXiv]</a></div>
+        <div class="pub-links"><a href="https://www.isca-archive.org/interspeech_2024/ghosh24b_interspeech.html">[Paper]</a> <a href="https://github.com/Sreyan88/LipGER">[Code]</a></div>
       </div>
     </div>
 
     <div class="pub-item">
       <span class="pub-title">CoSyn: Detecting Implicit Hate Speech in Online Conversations Using a Context Synergized Hyperbolic Network</span>
+      <div class="pub-authors">Sreyan Ghosh, Manan Suri, <strong>Purva Chiniya</strong>, Utkarsh Tyagi, Sonal Kumar, Dinesh Manocha</div>
       <div class="pub-venue">EMNLP 2023</div>
       <div class="pub-meta">
-        <div class="pub-links"><a href="https://arxiv.org/abs/2303.03387" target="_blank">[arXiv]</a></div>
+        <div class="pub-links"><a href="https://aclanthology.org/2023.emnlp-main.377/">[Paper]</a> <a href="https://github.com/Sreyan88/CoSyn">[Code]</a></div>
       </div>
     </div>
   </section>
@@ -511,6 +597,7 @@
       <div class="edu-date">2017 – 2021</div>
     </div>
   </section>
+  </main>
 
   <footer>
     <p>&copy; 2026 Purva Chiniya &nbsp;·&nbsp; Last updated October 2026</p>
