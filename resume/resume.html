@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purva Chiniya — Résumé</title>
+  <style>
+    @page { size: letter; margin: 0.38in 0.48in; }
+    * { box-sizing: border-box; }
+    html { color: #111; font-family: Georgia, "Times New Roman", serif; font-size: 9.1pt; }
+    body { margin: 0; line-height: 1.16; }
+    a { color: inherit; text-decoration: none; }
+    header { text-align: center; margin-bottom: 8px; }
+    h1 { font-size: 24pt; font-weight: 400; line-height: 1; margin: 0 0 4px; }
+    .contact { font-size: 8.4pt; }
+    .contact span + span::before { content: " | "; padding: 0 2px; }
+    section { margin-top: 8px; break-inside: avoid; }
+    h2 { font-size: 11.2pt; font-weight: 400; font-variant: small-caps; border-bottom: 1px solid #111; margin: 0 0 5px; padding-bottom: 1px; }
+    .entry { margin: 0 0 5px 11px; }
+    .entry-head { display: flex; justify-content: space-between; gap: 12px; }
+    .entry-head strong { font-size: 9.4pt; }
+    .entry-head span { text-align: right; white-space: nowrap; }
+    .entry-sub { display: flex; justify-content: space-between; gap: 12px; font-style: italic; }
+    .entry-sub span:last-child { white-space: nowrap; }
+    .entry p { margin: 1px 0 0; }
+    ul { margin: 1px 0 0 0; padding-left: 18px; }
+    li { padding-left: 0; margin-bottom: 1px; }
+    .pubs { list-style: none; margin: 0; padding: 0 0 0 11px; }
+    .pubs li { margin-bottom: 4px; }
+    .skills { padding-left: 11px; }
+    .skills p { margin: 1px 0; }
+    @media screen {
+      body { max-width: 8.5in; min-height: 11in; padding: 0.38in 0.48in; margin: 24px auto; box-shadow: 0 4px 24px #0002; }
+      html { background: #eee; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Purva Chiniya</h1>
+    <div class="contact">
+      <span>(240) 501-3488</span>
+      <span><a href="https://scholar.google.com/citations?user=c9aJlxcAAAAJ&amp;hl=en">Google Scholar</a></span>
+      <span><a href="https://www.linkedin.com/in/pchiniya/">LinkedIn</a></span>
+      <span><a href="mailto:purvachiniya15@gmail.com">purvachiniya15@gmail.com</a></span>
+      <span>Bellevue, WA</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head"><strong>University of Maryland, College Park</strong><span>College Park, MD</span></div>
+      <div class="entry-sub"><span>Master of Science in Computer Science</span><span>Aug 2023 – May 2025</span></div>
+      <p>Courses: Distributed Systems for ML, Advanced Numerical Optimization, LLM Security, ML at Scale</p>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><strong>Indian Institute of Technology Roorkee</strong><span>Roorkee, India</span></div>
+      <div class="entry-sub"><span>Bachelor of Technology in Electrical Engineering</span><span>Aug 2017 – June 2021</span></div>
+      <p>Awards: Best Project Award, Top Innovation Award</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head"><strong>Amazon.com</strong><span>Bellevue, WA</span></div>
+      <div class="entry-sub"><span>Applied Scientist, Amazon Ads</span><span>June 2025 – Present</span></div>
+      <ul>
+        <li>Architected a multi-agent autonomous framework for Sponsored Products using LLM-based reasoning agents to automate campaign optimizations for 1M+ advertisers; engineered scalable data pipelines in PySpark and AWS Glue to synthesize multi-terabyte seller and customer telemetry from S3 data lakes.</li>
+        <li>Deployed a runtime safety model for Alexa+ using a vLLM inference engine handling 80M+ daily requests at 35ms P90 latency; optimized throughput utilizing continuous batching and PagedAttention.</li>
+        <li>Directed the alignment strategy using Adversarial Fine-Tuning (AFT) on 7B+ models, boosting precision 8x (4% → 34%) and cutting False Positive Rate by 97% to effectively mitigate reasoning over-refusals.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><strong>Sentient Foundation</strong><span>Remote, US</span></div>
+      <div class="entry-sub"><span>AI Research Intern</span><span>Dec 2024 – May 2025</span></div>
+      <ul>
+        <li>Built Open Deep Search, a reasoning agent achieving SOTA (75.3%) on FRAMES and outperforming GPT-4o Search Preview via adaptive planning and dynamic query rewriting for complex multi-hop retrieval.</li>
+        <li>Built the CodeAct (Chain-of-Code Action) orchestration layer using SmolAgents and LiteLLM to execute multi-step reasoning; implemented a reproducible evaluation harness comparing ReAct vs. CodeAct.</li>
+        <li>Developed an HPO hyperparameter optimisation fine-tuning pipeline for data-mixture and hyperparameter search, cutting tuning iterations by 30% and reducing fine-tuning cycle time by 40% across 3B–70B parameter models.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><strong>Amazon.com</strong><span>Bellevue, WA</span></div>
+      <div class="entry-sub"><span>Applied Scientist Intern</span><span>May 2024 – Aug 2024</span></div>
+      <ul>
+        <li>Engineered a novel inference-time safety steering mechanism utilizing classifier gradients to guide decoding, achieving a 20% reduction in Attack Success Rate (ASR) on AdvBench while cutting false refusal rates by 50%.</li>
+        <li>Benchmarked performance against SOTA defenses (SafeDecoding, DPO) on Llama2-7B, validating the method’s effectiveness on jailbreak robustness; research accepted for publication at AMLC 2024 and LREC 2026.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><strong>Cisco Systems</strong><span>Bangalore, India</span></div>
+      <div class="entry-sub"><span>Software Engineer II</span><span>Aug 2021 – Aug 2023</span></div>
+      <ul>
+        <li>Optimized C++ BGP routing modules for Google peering traffic, resolving critical concurrency bottlenecks to drive a 16% revenue increase for the XR Business Unit via enhanced service availability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research Publications</h2>
+    <ol class="pubs">
+      <li>[1] <strong>Gradient-Controlled Decoding: A Safety Guardrail for LLMs with Dual-Anchor Steering.</strong> Accepted at LREC 2026.</li>
+      <li>[2] <strong>SecRepoBench: Benchmarking Secure Code Generation in Real-World Repositories.</strong> Repo-level vuln benchmark spanning 27 C/C++ repositories (318 tasks); revealed a 31% security drop vs single-file baselines. Accepted at LLM4Code 2026. <a href="https://arxiv.org/abs/2504.21205">arXiv:2504.21205</a>.</li>
+      <li>[3] <strong>Open Deep Search: SOTA Agentic Search via Planning.</strong> Achieved 75.3% on FRAMES and outperformed GPT-4o Search Preview by +9.7% via adaptive planning and tool use. Preprint (2025). <a href="https://arxiv.org/abs/2503.20201">arXiv:2503.20201</a>.</li>
+      <li>[4] <strong>AV-RIR: Audio-Visual Room Impulse Response Estimation.</strong> Multi-task learning fusing audio-visual cues to reconstruct acoustic environments. Accepted at CVPR 2024. <a href="https://arxiv.org/abs/2312.00834">arXiv:2312.00834</a>.</li>
+      <li>[5] <strong>CoSyn: Implicit Hate Speech Detection via Hyperbolic Networks.</strong> Hyperbolic GNN (GCN) + TreeLSTM to model latent social dynamics in conversational threads. Accepted at EMNLP 2023. <a href="https://arxiv.org/abs/2303.03387">arXiv:2303.03387</a>.</li>
+      <li>[6] <strong>LipGER: Visually-Conditioned ASR Error Correction.</strong> Visual modality pipeline to correct ASR errors in noise-heavy environments and improve robustness. Accepted at INTERSPEECH 2024. <a href="https://arxiv.org/abs/2406.04432">arXiv:2406.04432</a>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <p><strong>Languages:</strong> Python, Java, C++, SQL, Bash</p>
+      <p><strong>ML/Systems &amp; Tools:</strong> PyTorch, Triton, vLLM, DeepSpeed, FlashAttention, Codex, Git, Docker, Cursor, Claude Code</p>
+    </div>
+  </section>
+</body>
+</html>
